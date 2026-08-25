@@ -365,7 +365,7 @@ export const POSTS = [
   },
   {
     slug: "devocional-a-fe-que-permanece",
-    category: "Devocional",
+    category: "Devocionais",
     title: "A fé que permanece quando tudo balança",
     excerpt:
       "Há dias em que a oração parece bater no teto. É exatamente ali que a fé deixa de ser emoção e passa a ser decisão de permanecer.",
@@ -383,7 +383,7 @@ export const POSTS = [
   },
 ] as const;
 
-export const POST_CATEGORIES = ["Tudo", "Devocional", "História da Igreja", "Missões", "Teologia Sistemática"];
+export const POST_CATEGORIES = ["Tudo", "Devocionais", "História da Igreja", "Missões", "Teologia Sistemática"];
 
 export const WHATSAPP_PRAYER_NUMBER = "5521999871093";
 

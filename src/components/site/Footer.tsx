@@ -15,8 +15,6 @@ const navLinks = [
   { label: "Cláudio Gama Play", to: "/play" },
   { label: "Agenda", to: "/agenda" },
   { label: "Devocionais e Estudos", to: "/mensagens" },
-  { label: "Pedido de Oração", to: "/oracao" },
-  { label: "Contribua com a Obra", to: "/contribua" },
 ] as const;
 
 const assessoria = [

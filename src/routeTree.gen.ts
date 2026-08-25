@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as ContatoRouteImport } from './routes/contato'
-import { Route as ContribuaRouteImport } from './routes/contribua'
 import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as InstitutoRouteImport } from './routes/instituto'
 import { Route as PlayRouteImport } from './routes/play'
@@ -35,11 +34,6 @@ const AgendaRoute = AgendaRouteImport.update({
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContribuaRoute = ContribuaRouteImport.update({
-  id: '/contribua',
-  path: '/contribua',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EntrarRoute = EntrarRouteImport.update({
@@ -87,7 +81,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/contato': typeof ContatoRoute
-  '/contribua': typeof ContribuaRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
   '/play': typeof PlayRoute
@@ -101,7 +94,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/contato': typeof ContatoRoute
-  '/contribua': typeof ContribuaRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
   '/play': typeof PlayRoute
@@ -116,7 +108,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
   '/contato': typeof ContatoRoute
-  '/contribua': typeof ContribuaRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
   '/play': typeof PlayRoute
@@ -132,7 +123,6 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/contato'
-    | '/contribua'
     | '/entrar'
     | '/instituto'
     | '/play'
@@ -146,7 +136,6 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/contato'
-    | '/contribua'
     | '/entrar'
     | '/instituto'
     | '/play'
@@ -160,7 +149,6 @@ export interface FileRouteTypes {
     | '/'
     | '/agenda'
     | '/contato'
-    | '/contribua'
     | '/entrar'
     | '/instituto'
     | '/play'
@@ -175,7 +163,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgendaRoute: typeof AgendaRoute
   ContatoRoute: typeof ContatoRoute
-  ContribuaRoute: typeof ContribuaRoute
   EntrarRoute: typeof EntrarRoute
   InstitutoRoute: typeof InstitutoRoute
   PlayRoute: typeof PlayRoute
@@ -207,13 +194,6 @@ declare module '@tanstack/react-router' {
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contribua': {
-      id: '/contribua'
-      path: '/contribua'
-      fullPath: '/contribua'
-      preLoaderRoute: typeof ContribuaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/entrar': {
@@ -279,7 +259,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgendaRoute: AgendaRoute,
   ContatoRoute: ContatoRoute,
-  ContribuaRoute: ContribuaRoute,
   EntrarRoute: EntrarRoute,
   InstitutoRoute: InstitutoRoute,
   PlayRoute: PlayRoute,
