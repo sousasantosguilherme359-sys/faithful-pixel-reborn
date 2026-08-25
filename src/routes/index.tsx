@@ -69,7 +69,7 @@ function Index() {
         <img
           src="/images/pastor-microfone-left.jpeg"
           alt="Pastor Cláudio Gama pregando ao microfone"
-          className="absolute inset-0 h-full w-full object-cover object-top opacity-40"
+          className="absolute inset-0 h-full w-full object-cover object-[center_18%] opacity-40"
         />
         <div
           className="absolute inset-0"
@@ -232,7 +232,7 @@ function Index() {
                   src={s.image}
                   alt={s.title}
                   loading="lazy"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover object-[center_18%] transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 to-transparent" />
                 <span className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-navy-deep">
@@ -341,7 +341,7 @@ function Index() {
           src="/images/familia-1.jpeg"
           alt="Pastor Cláudio Gama com a família e os netos"
           loading="lazy"
-          className="mt-10 h-72 w-full rounded-3xl border border-border object-cover object-top shadow-elegant"
+          className="mt-10 h-72 w-full rounded-3xl border border-border object-cover object-[center_18%] shadow-elegant"
         />
       </section>
 
@@ -385,7 +385,7 @@ function Index() {
         <img
           src="/images/pastor-sorrindo.jpeg"
           alt="Pastor Cláudio Gama"
-          className="absolute inset-0 h-full w-full object-cover object-top opacity-25"
+          className="absolute inset-0 h-full w-full object-cover object-[center_18%] opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy-deep/92 to-navy-deep" />
         <div className="container-site relative py-24 text-center">
