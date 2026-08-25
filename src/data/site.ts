@@ -13,7 +13,6 @@ export const NAV = [
   { label: "Agenda", to: "/agenda", highlight: true },
   { label: "Mensagens", to: "/mensagens" },
   { label: "Instituto", to: "/instituto" },
-  { label: "Oração", to: "/oracao" },
   { label: "Contato", to: "/contato" },
 ] as const;
 

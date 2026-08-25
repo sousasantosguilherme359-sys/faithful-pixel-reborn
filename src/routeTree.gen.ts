@@ -15,7 +15,6 @@ import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ContribuaRouteImport } from './routes/contribua'
 import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as InstitutoRouteImport } from './routes/instituto'
-import { Route as OracaoRouteImport } from './routes/oracao'
 import { Route as PlayRouteImport } from './routes/play'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as LojaIndexRouteImport } from './routes/loja.index'
@@ -51,11 +50,6 @@ const EntrarRoute = EntrarRouteImport.update({
 const InstitutoRoute = InstitutoRouteImport.update({
   id: '/instituto',
   path: '/instituto',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OracaoRoute = OracaoRouteImport.update({
-  id: '/oracao',
-  path: '/oracao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlayRoute = PlayRouteImport.update({
@@ -96,7 +90,6 @@ export interface FileRoutesByFullPath {
   '/contribua': typeof ContribuaRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
-  '/oracao': typeof OracaoRoute
   '/play': typeof PlayRoute
   '/sobre': typeof SobreRoute
   '/loja/$slug': typeof LojaSlugRoute
@@ -111,7 +104,6 @@ export interface FileRoutesByTo {
   '/contribua': typeof ContribuaRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
-  '/oracao': typeof OracaoRoute
   '/play': typeof PlayRoute
   '/sobre': typeof SobreRoute
   '/loja/$slug': typeof LojaSlugRoute
@@ -127,7 +119,6 @@ export interface FileRoutesById {
   '/contribua': typeof ContribuaRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
-  '/oracao': typeof OracaoRoute
   '/play': typeof PlayRoute
   '/sobre': typeof SobreRoute
   '/loja/$slug': typeof LojaSlugRoute
@@ -144,7 +135,6 @@ export interface FileRouteTypes {
     | '/contribua'
     | '/entrar'
     | '/instituto'
-    | '/oracao'
     | '/play'
     | '/sobre'
     | '/loja/$slug'
@@ -159,7 +149,6 @@ export interface FileRouteTypes {
     | '/contribua'
     | '/entrar'
     | '/instituto'
-    | '/oracao'
     | '/play'
     | '/sobre'
     | '/loja/$slug'
@@ -174,7 +163,6 @@ export interface FileRouteTypes {
     | '/contribua'
     | '/entrar'
     | '/instituto'
-    | '/oracao'
     | '/play'
     | '/sobre'
     | '/loja/$slug'
@@ -190,7 +178,6 @@ export interface RootRouteChildren {
   ContribuaRoute: typeof ContribuaRoute
   EntrarRoute: typeof EntrarRoute
   InstitutoRoute: typeof InstitutoRoute
-  OracaoRoute: typeof OracaoRoute
   PlayRoute: typeof PlayRoute
   SobreRoute: typeof SobreRoute
   LojaSlugRoute: typeof LojaSlugRoute
@@ -241,13 +228,6 @@ declare module '@tanstack/react-router' {
       path: '/instituto'
       fullPath: '/instituto'
       preLoaderRoute: typeof InstitutoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/oracao': {
-      id: '/oracao'
-      path: '/oracao'
-      fullPath: '/oracao'
-      preLoaderRoute: typeof OracaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/play': {
@@ -302,7 +282,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContribuaRoute: ContribuaRoute,
   EntrarRoute: EntrarRoute,
   InstitutoRoute: InstitutoRoute,
-  OracaoRoute: OracaoRoute,
   PlayRoute: PlayRoute,
   SobreRoute: SobreRoute,
   LojaSlugRoute: LojaSlugRoute,

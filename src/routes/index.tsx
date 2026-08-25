@@ -19,7 +19,6 @@ import {
   HOME_SERMONS,
   BOOKS,
   TESTIMONIALS,
-  POSTS,
   WHATSAPP_MAIN,
 } from "@/data/site";
 
@@ -103,6 +102,34 @@ function Index() {
           >
             Fale com o ministério no WhatsApp
           </a>
+        </div>
+      </section>
+
+      {/* FEATURED VIDEO */}
+      <section className="container-site py-20">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow">Pregação em Destaque</p>
+          <h2 className="section-title mt-3">
+            DEUS É A MINHA <span className="gold-gradient-text">PRIORIDADE</span>
+          </h2>
+        </div>
+        <div className="relative mx-auto mt-12 aspect-video max-w-4xl overflow-hidden rounded-3xl border border-border shadow-elegant">
+          <img
+            src="/images/video-destaque.jpg"
+            alt="Deus é a Minha Prioridade — Pastor Cláudio Gama"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-navy-deep/40" />
+          <button
+            type="button"
+            aria-label="Assistir vídeo"
+            className="group absolute inset-0 m-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold/90 transition-transform hover:scale-110"
+          >
+            <PlayCircle className="h-10 w-10 text-navy-deep" />
+          </button>
+          <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-sm font-semibold text-foreground">
+            Assistir agora — sem sair do site
+          </span>
         </div>
       </section>
 
@@ -279,6 +306,45 @@ function Index() {
         </div>
       </section>
 
+      {/* NOSSO MINISTÉRIO (família) */}
+      <section className="container-site py-20">
+        <div className="grid items-center gap-6 lg:grid-cols-2">
+          <img
+            src="/images/pastor-e-esposa.jpeg"
+            alt="Pastor Cláudio Gama e sua esposa"
+            loading="lazy"
+            className="w-full rounded-3xl border border-border object-cover shadow-elegant"
+          />
+          <div>
+            <p className="eyebrow">Nosso Ministério</p>
+            <h2 className="section-title mt-3">
+              MAIS DE CINCO <span className="gold-gradient-text">DÉCADAS</span> DE ENTREGA
+            </h2>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              Há mais de 50 anos anunciando o Evangelho, o Pastor Cláudio Gama já esteve em mais de 30 países levando a
+              Palavra de Deus e vendo vidas serem transformadas pela fé.
+            </p>
+            <Quote className="mt-8 h-7 w-7 text-gold/60" />
+            <blockquote className="mt-4 font-display text-xl leading-snug">
+              "Minha família, além de ser o meu maior patrimônio, também é o meu ministério."
+            </blockquote>
+            <p className="mt-3 text-sm font-semibold tracking-[0.16em] text-gold">PASTOR CLÁUDIO GAMA</p>
+            <Link
+              to="/sobre"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gold hover:underline"
+            >
+              Conheça nossa história <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+        <img
+          src="/images/familia-1.jpeg"
+          alt="Pastor Cláudio Gama com a família e os netos"
+          loading="lazy"
+          className="mt-10 h-72 w-full rounded-3xl border border-border object-cover shadow-elegant"
+        />
+      </section>
+
       {/* TESTIMONIALS */}
       <section className="container-site py-20">
         <div className="mx-auto max-w-2xl text-center">
@@ -311,57 +377,6 @@ function Index() {
               </figcaption>
             </figure>
           ))}
-        </div>
-      </section>
-
-      {/* LATEST POSTS */}
-      <section className="border-y border-border/60 bg-navy py-20">
-        <div className="container-site">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="eyebrow">Devocionais e Estudos</p>
-              <h2 className="section-title mt-3">
-                ÚLTIMAS <span className="gold-gradient-text">REFLEXÕES</span>
-              </h2>
-            </div>
-            <Link
-              to="/mensagens"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:underline"
-            >
-              Ler mais <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {POSTS.slice(0, 3).map((p) => (
-              <article
-                key={p.slug}
-                className="group overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-gold/60"
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <span className="text-[0.65rem] font-bold uppercase tracking-widest text-gold">
-                    {p.category}
-                  </span>
-                  <h3 className="mt-3 font-display text-lg font-bold leading-snug group-hover:text-gold">
-                    {p.title}
-                  </h3>
-                  <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">{p.excerpt}</p>
-                  <p className="mt-5 flex items-center gap-3 text-xs text-muted-foreground">
-                    <span>{p.date}</span>
-                    <span className="h-1 w-1 rounded-full bg-muted-foreground" />
-                    <span>{p.read} de leitura</span>
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
