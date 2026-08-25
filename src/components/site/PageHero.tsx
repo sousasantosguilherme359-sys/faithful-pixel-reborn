@@ -17,7 +17,7 @@ export function PageHero({
     <section className="relative overflow-hidden border-b border-border/60">
       {image && (
         <>
-          <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" />
+          <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover object-top opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/90 to-navy-deep" />
         </>
       )}

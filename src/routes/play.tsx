@@ -30,7 +30,7 @@ function PlayPage() {
         <img
           src="/images/pastor-pregando-costas.jpeg"
           alt="Deus Revela o Impossível"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/30" />
         <div className="container-site relative py-28 md:py-36">
@@ -73,7 +73,7 @@ function PlayPage() {
                 className="group overflow-hidden rounded-2xl border border-border bg-card"
               >
                 <div className="relative">
-                  <img src={v.image} alt={v.title} loading="lazy" className="h-40 w-full object-cover" />
+                  <img src={v.image} alt={v.title} loading="lazy" className="h-40 w-full object-cover object-top" />
                   <span className="absolute inset-0 flex items-center justify-center bg-navy-deep/50 opacity-0 transition-opacity group-hover:opacity-100">
                     <Play className="h-10 w-10 text-gold" />
                   </span>

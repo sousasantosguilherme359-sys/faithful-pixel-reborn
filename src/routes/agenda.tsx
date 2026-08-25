@@ -112,7 +112,7 @@ function AgendaPage() {
               src={src}
               alt="Evento realizado do Pastor Cláudio Gama"
               loading="lazy"
-              className="h-52 w-full rounded-2xl border border-border object-cover"
+              className="h-52 w-full rounded-2xl border border-border object-cover object-top"
             />
           ))}
         </div>

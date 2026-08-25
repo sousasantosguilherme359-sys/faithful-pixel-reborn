@@ -104,30 +104,30 @@ export const AGENDA_EVENTS = [
 ];
 
 export const HOME_SERMONS = [
-  { title: "Deus Revela o Impossível", duration: "48:32", tag: "Revelação", image: "/images/sermon-1.jpg" },
-  { title: "Jesus te Cura Hoje", duration: "44:20", tag: "Cura", image: "/images/sermon-2.jpg" },
-  { title: "Liderança que Transforma", duration: "42:28", tag: "Liderança", image: "/images/sermon-3.jpg" },
+  { title: "Deus Revela o Impossível", duration: "48:32", tag: "Revelação", image: "/images/pastor-pregando-plateia.jpeg" },
+  { title: "Jesus te Cura Hoje", duration: "44:20", tag: "Cura", image: "/images/pastor-microfone.jpeg" },
+  { title: "Liderança que Transforma", duration: "42:28", tag: "Liderança", image: "/images/pastor-aplaudindo.jpeg" },
 ];
 
 export const PLAY_CATEGORIES = [
   {
     name: "Liderança",
     videos: [
-      { title: "Líderes que Deixam Legado", duration: "50:12", image: "/images/sermon-1.jpg" },
-      { title: "Liderar com Propósito", duration: "40:45", image: "/images/sermon-2.jpg" },
-      { title: "Princípios de um Líder Vencedor", duration: "47:16", image: "/images/sermon-3.jpg" },
-      { title: "Liderança que Transforma", duration: "42:28", image: "/images/sermon-4.jpg" },
-      { title: "Deus Levanta Líderes", duration: "45:00", image: "/images/sermon-5.jpg" },
+      { title: "Líderes que Deixam Legado", duration: "50:12", image: "/images/pastor-aplaudindo.jpeg" },
+      { title: "Liderar com Propósito", duration: "40:45", image: "/images/pastor-microfone-left.jpeg" },
+      { title: "Princípios de um Líder Vencedor", duration: "47:16", image: "/images/pastor-pregando-plateia.jpeg" },
+      { title: "Liderança que Transforma", duration: "42:28", image: "/images/pastor-sorrindo.jpeg" },
+      { title: "Deus Levanta Líderes", duration: "45:00", image: "/images/pastor-microfone.jpeg" },
     ],
   },
   {
     name: "Cura",
     videos: [
-      { title: "A Cura Vem do Altar", duration: "48:09", image: "/images/sermon-6.jpg" },
-      { title: "Curado para Curar", duration: "41:33", image: "/images/sermon-7.jpg" },
-      { title: "O Poder de Deus que Sara", duration: "43:50", image: "/images/sermon-8.jpg" },
-      { title: "A Fé que Traz Restauração", duration: "46:18", image: "/images/sermon-9.jpg" },
-      { title: "Jesus te Cura Hoje", duration: "44:20", image: "/images/sermon-10.jpg" },
+      { title: "A Cura Vem do Altar", duration: "48:09", image: "/images/pastor-pregando-costas.jpeg" },
+      { title: "Curado para Curar", duration: "41:33", image: "/images/pastor-microfone.jpeg" },
+      { title: "O Poder de Deus que Sara", duration: "43:50", image: "/images/pastor-aplaudindo.jpeg" },
+      { title: "A Fé que Traz Restauração", duration: "46:18", image: "/images/pastor-microfone-left.jpeg" },
+      { title: "Jesus te Cura Hoje", duration: "44:20", image: "/images/pastor-sorrindo.jpeg" },
     ],
   },
   {

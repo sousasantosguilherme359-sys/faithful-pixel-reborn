@@ -151,7 +151,7 @@ function SobrePage() {
               src={src}
               alt="Ministério Pastor Cláudio Gama"
               loading="lazy"
-              className="h-64 w-full rounded-2xl border border-border object-cover"
+              className="h-64 w-full rounded-2xl border border-border object-cover object-top"
             />
           ))}
         </div>
