@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { BOOKS } from "@/data/site";
+import { useCart } from "@/lib/cart";
 
 export const Route = createFileRoute("/loja/")({
   component: LojaPage,
@@ -29,6 +30,7 @@ const FILTERS = ["Todos os Livros", "Mais Vendidos", "Bíblia e Teologia", "Devo
 function LojaPage() {
   const [filter, setFilter] = useState(FILTERS[0]);
   const books = filter === FILTERS[0] ? BOOKS : BOOKS.filter((b) => b.category === filter);
+  const cart = useCart();
 
   return (
     <>
@@ -77,9 +79,9 @@ function LojaPage() {
                 <p className="mt-1 text-sm text-muted-foreground">Claudio Gama</p>
                 <div className="mt-auto flex items-center justify-between pt-6">
                   <span className="font-display text-xl font-bold text-gold">{b.price}</span>
-                  <Link to="/loja/$slug" params={{ slug: b.slug }} className="btn-gold !px-5 !py-2.5">
+                  <button type="button" onClick={() => cart.add(b.slug, 1)} className="btn-gold !px-5 !py-2.5">
                     Adicionar
-                  </Link>
+                  </button>
                 </div>
               </div>
             </article>

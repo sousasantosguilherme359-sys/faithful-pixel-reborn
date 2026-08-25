@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ShoppingCart, MessageCircle, Phone } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, ShoppingCart, MessageCircle, Phone, Minus, Plus } from "lucide-react";
 import { BOOKS } from "@/data/site";
+import { useCart } from "@/lib/cart";
 
 export const Route = createFileRoute("/loja/$slug")({
   loader: ({ params }) => {
@@ -30,6 +32,15 @@ export const Route = createFileRoute("/loja/$slug")({
 function BookPage() {
   const book = Route.useLoaderData();
   const waText = encodeURIComponent(`Paz do Senhor! Tenho interesse no livro "${book.title}".`);
+  const cart = useCart();
+  const [quantity, setQuantity] = useState(1);
+  const [added, setAdded] = useState(false);
+
+  function handleAddToCart() {
+    cart.add(book.slug, quantity);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
+  }
 
   return (
     <section className="container-site py-14">
@@ -53,9 +64,32 @@ function BookPage() {
           <div className="mt-8 rounded-2xl border border-border bg-card p-6">
             <p className="text-sm text-muted-foreground">Livro Físico</p>
             <p className="mt-1 font-display text-3xl font-black text-gold">{book.price}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button type="button" className="btn-gold">
-                <ShoppingCart className="h-4 w-4" /> Adicionar ao carrinho
+
+            <div className="mt-6 flex items-center gap-3">
+              <div className="flex items-center rounded-full border border-border">
+                <button
+                  type="button"
+                  aria-label="Diminuir quantidade"
+                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                  className="flex h-9 w-9 items-center justify-center text-foreground/80 hover:text-gold"
+                >
+                  <Minus className="h-3.5 w-3.5" />
+                </button>
+                <span className="w-8 text-center text-sm font-semibold">{quantity}</span>
+                <button
+                  type="button"
+                  aria-label="Aumentar quantidade"
+                  onClick={() => setQuantity((q) => q + 1)}
+                  className="flex h-9 w-9 items-center justify-center text-foreground/80 hover:text-gold"
+                >
+                  <Plus className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <button type="button" onClick={handleAddToCart} className="btn-gold">
+                <ShoppingCart className="h-4 w-4" /> {added ? "Adicionado!" : "Adicionar ao carrinho"}
               </button>
               <a
                 href={`https://wa.me/5511911356596?text=${waText}`}
@@ -66,6 +100,14 @@ function BookPage() {
                 <MessageCircle className="h-4 w-4" /> Comprar pelo WhatsApp
               </a>
             </div>
+            {added && (
+              <p className="mt-3 text-sm font-semibold text-gold">
+                Adicionado ao carrinho.{" "}
+                <Link to="/carrinho" className="underline">
+                  Ver carrinho
+                </Link>
+              </p>
+            )}
             <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
               Compre online com Pix, cartão ou boleto — o frete dos Correios é calculado pelo seu CEP no checkout.
               Prefere atendimento pessoal? Faça o pedido pelo WhatsApp.

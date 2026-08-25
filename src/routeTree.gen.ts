@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgendaRouteImport } from './routes/agenda'
+import { Route as CarrinhoRouteImport } from './routes/carrinho'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as InstitutoRouteImport } from './routes/instituto'
@@ -20,6 +21,7 @@ import { Route as LojaIndexRouteImport } from './routes/loja.index'
 import { Route as LojaSlugRouteImport } from './routes/loja.$slug'
 import { Route as MensagensIndexRouteImport } from './routes/mensagens.index'
 import { Route as MensagensSlugRouteImport } from './routes/mensagens.$slug'
+import { Route as ApiWebhooksAsaasRouteImport } from './routes/api.webhooks.asaas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const AgendaRoute = AgendaRouteImport.update({
   id: '/agenda',
   path: '/agenda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarrinhoRoute = CarrinhoRouteImport.update({
+  id: '/carrinho',
+  path: '/carrinho',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -76,10 +83,16 @@ const MensagensSlugRoute = MensagensSlugRouteImport.update({
   path: '/mensagens/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiWebhooksAsaasRoute = ApiWebhooksAsaasRouteImport.update({
+  id: '/api/webhooks/asaas',
+  path: '/api/webhooks/asaas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
+  '/carrinho': typeof CarrinhoRoute
   '/contato': typeof ContatoRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
@@ -89,10 +102,12 @@ export interface FileRoutesByFullPath {
   '/mensagens/$slug': typeof MensagensSlugRoute
   '/loja/': typeof LojaIndexRoute
   '/mensagens/': typeof MensagensIndexRoute
+  '/api/webhooks/asaas': typeof ApiWebhooksAsaasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
+  '/carrinho': typeof CarrinhoRoute
   '/contato': typeof ContatoRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
@@ -102,11 +117,13 @@ export interface FileRoutesByTo {
   '/mensagens/$slug': typeof MensagensSlugRoute
   '/loja': typeof LojaIndexRoute
   '/mensagens': typeof MensagensIndexRoute
+  '/api/webhooks/asaas': typeof ApiWebhooksAsaasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/agenda': typeof AgendaRoute
+  '/carrinho': typeof CarrinhoRoute
   '/contato': typeof ContatoRoute
   '/entrar': typeof EntrarRoute
   '/instituto': typeof InstitutoRoute
@@ -116,12 +133,14 @@ export interface FileRoutesById {
   '/mensagens/$slug': typeof MensagensSlugRoute
   '/loja/': typeof LojaIndexRoute
   '/mensagens/': typeof MensagensIndexRoute
+  '/api/webhooks/asaas': typeof ApiWebhooksAsaasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/agenda'
+    | '/carrinho'
     | '/contato'
     | '/entrar'
     | '/instituto'
@@ -131,10 +150,12 @@ export interface FileRouteTypes {
     | '/mensagens/$slug'
     | '/loja/'
     | '/mensagens/'
+    | '/api/webhooks/asaas'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/agenda'
+    | '/carrinho'
     | '/contato'
     | '/entrar'
     | '/instituto'
@@ -144,10 +165,12 @@ export interface FileRouteTypes {
     | '/mensagens/$slug'
     | '/loja'
     | '/mensagens'
+    | '/api/webhooks/asaas'
   id:
     | '__root__'
     | '/'
     | '/agenda'
+    | '/carrinho'
     | '/contato'
     | '/entrar'
     | '/instituto'
@@ -157,11 +180,13 @@ export interface FileRouteTypes {
     | '/mensagens/$slug'
     | '/loja/'
     | '/mensagens/'
+    | '/api/webhooks/asaas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgendaRoute: typeof AgendaRoute
+  CarrinhoRoute: typeof CarrinhoRoute
   ContatoRoute: typeof ContatoRoute
   EntrarRoute: typeof EntrarRoute
   InstitutoRoute: typeof InstitutoRoute
@@ -171,6 +196,7 @@ export interface RootRouteChildren {
   MensagensSlugRoute: typeof MensagensSlugRoute
   LojaIndexRoute: typeof LojaIndexRoute
   MensagensIndexRoute: typeof MensagensIndexRoute
+  ApiWebhooksAsaasRoute: typeof ApiWebhooksAsaasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -187,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/agenda'
       fullPath: '/agenda'
       preLoaderRoute: typeof AgendaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carrinho': {
+      id: '/carrinho'
+      path: '/carrinho'
+      fullPath: '/carrinho'
+      preLoaderRoute: typeof CarrinhoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -252,12 +285,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MensagensSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/webhooks/asaas': {
+      id: '/api/webhooks/asaas'
+      path: '/api/webhooks/asaas'
+      fullPath: '/api/webhooks/asaas'
+      preLoaderRoute: typeof ApiWebhooksAsaasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgendaRoute: AgendaRoute,
+  CarrinhoRoute: CarrinhoRoute,
   ContatoRoute: ContatoRoute,
   EntrarRoute: EntrarRoute,
   InstitutoRoute: InstitutoRoute,
@@ -267,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   MensagensSlugRoute: MensagensSlugRoute,
   LojaIndexRoute: LojaIndexRoute,
   MensagensIndexRoute: MensagensIndexRoute,
+  ApiWebhooksAsaasRoute: ApiWebhooksAsaasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Calendar, ShoppingBag, User, Menu, X, ArrowRight, Youtube, Instagram, Facebook, Music2 } from "lucide-react";
+import { Calendar, ShoppingBag, ShoppingCart, User, Menu, X, ArrowRight, Youtube, Instagram, Facebook, Music2 } from "lucide-react";
 import { NAV, SOCIALS } from "@/data/site";
+import { useCart } from "@/lib/cart";
 
 const socialIcon: Record<string, typeof Youtube> = {
   YouTube: Youtube,
@@ -12,6 +13,7 @@ const socialIcon: Record<string, typeof Youtube> = {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { totalQuantity } = useCart();
 
   return (
     <header className="sticky top-0 z-50">
@@ -84,6 +86,14 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link to="/loja" aria-label="Loja" className="hidden text-foreground/80 hover:text-gold sm:block">
               <ShoppingBag className="h-5 w-5" />
+            </Link>
+            <Link to="/carrinho" aria-label="Carrinho" className="relative text-foreground/80 hover:text-gold">
+              <ShoppingCart className="h-5 w-5" />
+              {totalQuantity > 0 && (
+                <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[0.6rem] font-bold text-navy-deep">
+                  {totalQuantity}
+                </span>
+              )}
             </Link>
             <Link
               to="/entrar"
