@@ -39,9 +39,14 @@ function PlayPage() {
           <p className="mt-5 max-w-xl text-muted-foreground">
             Uma palavra poderosa sobre fé, revelação e o agir sobrenatural de Deus na sua vida.
           </p>
-          <button type="button" className="btn-gold mt-8">
+          <a
+            href="https://youtube.com/@pastorclaudiogama"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-gold mt-8"
+          >
             <Play className="h-4 w-4" /> Assistir agora
-          </button>
+          </a>
         </div>
       </section>
 
@@ -49,13 +54,24 @@ function PlayPage() {
         <section key={cat.name} className="container-site py-12">
           <div className="flex items-end justify-between">
             <h2 className="font-display text-2xl font-bold">{cat.name}</h2>
-            <button type="button" className="inline-flex items-center gap-1 text-sm text-gold hover:underline">
+            <a
+              href="https://youtube.com/@pastorclaudiogama"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-gold hover:underline"
+            >
               Ver mais <ArrowRight className="h-4 w-4" />
-            </button>
+            </a>
           </div>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {cat.videos.map((v) => (
-              <article key={v.title} className="group overflow-hidden rounded-2xl border border-border bg-card">
+              <a
+                key={v.title}
+                href="https://youtube.com/@pastorclaudiogama"
+                target="_blank"
+                rel="noreferrer"
+                className="group overflow-hidden rounded-2xl border border-border bg-card"
+              >
                 <div className="relative">
                   <img src={v.image} alt={v.title} loading="lazy" className="h-40 w-full object-cover" />
                   <span className="absolute inset-0 flex items-center justify-center bg-navy-deep/50 opacity-0 transition-opacity group-hover:opacity-100">
@@ -66,7 +82,7 @@ function PlayPage() {
                   </span>
                 </div>
                 <h3 className="p-4 text-sm font-semibold leading-snug">{v.title}</h3>
-              </article>
+              </a>
             ))}
           </div>
         </section>

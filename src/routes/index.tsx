@@ -109,24 +109,28 @@ function Index() {
             DEUS É A MINHA <span className="gold-gradient-text">PRIORIDADE</span>
           </h2>
         </div>
-        <div className="relative mx-auto mt-12 aspect-video max-w-4xl overflow-hidden rounded-3xl border border-border shadow-elegant">
+        <a
+          href="https://youtube.com/@pastorclaudiogama"
+          target="_blank"
+          rel="noreferrer"
+          className="group relative mx-auto mt-12 block aspect-video max-w-4xl overflow-hidden rounded-3xl border border-border shadow-elegant"
+        >
           <img
             src="/images/video-destaque.jpg"
             alt="Deus é a Minha Prioridade — Pastor Cláudio Gama"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-navy-deep/40" />
-          <button
-            type="button"
-            aria-label="Assistir vídeo"
-            className="group absolute inset-0 m-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold/90 transition-transform hover:scale-110"
+          <span
+            aria-hidden
+            className="absolute inset-0 m-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold/90 transition-transform group-hover:scale-110"
           >
             <PlayCircle className="h-10 w-10 text-navy-deep" />
-          </button>
-          <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-sm font-semibold text-foreground">
-            Assistir agora — sem sair do site
           </span>
-        </div>
+          <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-sm font-semibold text-foreground">
+            Assistir no YouTube
+          </span>
+        </a>
       </section>
 
       {/* STATS */}
