@@ -1,0 +1,17 @@
+{
+  // Config de deploy direto pro Cloudflare Workers, fora da Lovable —
+  // usada quando o projeto é conectado via Cloudflare Dashboard > Workers
+  // & Pages > Import a repository (Git). Espelha o que o Nitro já gera
+  // automaticamente em .output/server/wrangler.json no build (ver
+  // vite.config.ts, preset "cloudflare"), só que fixo aqui na raiz pra o
+  // Cloudflare achar sem precisar de --config customizado.
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "pastor-claudio-gama",
+  "main": ".output/server/index.mjs",
+  "compatibility_date": "2026-08-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".output/public"
+  }
+}
