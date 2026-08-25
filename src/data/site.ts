@@ -371,7 +371,7 @@ export const POSTS = [
       "Há dias em que a oração parece bater no teto. É exatamente ali que a fé deixa de ser emoção e passa a ser decisão de permanecer.",
     date: "5 de agosto de 2026",
     read: "6 min",
-    image: "/images/pastor-microfone-left.jpeg",
+    image: "/images/pastor-pregando-plateia.jpeg",
     verse: "“Ainda que a figueira não floresça… eu me alegrarei no Senhor.” — Habacuque 3.17-18",
     body: [
       "Habacuque não escreveu esse texto na bonança. Ele escreveu olhando para uma lavoura sem fruto, um curral vazio e um país prestes a ser invadido. E mesmo assim decidiu: eu me alegrarei no Senhor.",

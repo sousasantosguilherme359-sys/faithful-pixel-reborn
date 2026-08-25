@@ -67,8 +67,8 @@ function Index() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <img
-          src="/images/pastor-pregando-plateia.jpeg"
-          alt="Pastor Cláudio Gama pregando para a plateia"
+          src="/images/pastor-microfone-left.jpeg"
+          alt="Pastor Cláudio Gama pregando ao microfone"
           className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
         <div
@@ -81,17 +81,13 @@ function Index() {
             PASTOR <span className="gold-gradient-text">CLÁUDIO GAMA</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Anunciando o Evangelho de Jesus Cristo com poder, amor e autoridade —
-            transformando vidas pela fé há mais de cinco décadas.
+            Nosso propósito é levar a Palavra de Deus com verdade, amor e poder, transformando vidas e
+            edificando famílias para o Reino de Deus.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link to="/agenda" className="btn-gold">
-              <Calendar className="h-4 w-4" />
-              Próximos Eventos
-            </Link>
-            <Link to="/mensagens" className="btn-outline-gold">
-              <PlayCircle className="h-4 w-4" />
-              Ouvir Mensagens
+            <Link to="/sobre" className="btn-gold">
+              <Compass className="h-4 w-4" />
+              Conheça o Ministério
             </Link>
           </div>
           <a
